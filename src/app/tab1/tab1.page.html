@@ -8,11 +8,24 @@
 
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content>
+  <ion-breadcrumbs>
+    <ion-breadcrumb href="#index">donuts</ion-breadcrumb>
+    <ion-breadcrumb href="#inicio">Cambios</ion-breadcrumb>
+  </ion-breadcrumbs>
+
+  <ion-item *ngFor ="let dona of listaDona">
+    
+    <p>{{ dona.nombre }} $ {{ dona.precio }} pesos  </p>
+    <ion-button color="success" [routerLink]="['/home']">Comprar {{ dona.nombre }}</ion-button>
+
+   </ion-item>
+  <!-- <p *ngIF="edad < 35">{{ Persona.nombre }}</p>
+ 
+  <ion-item>
+    <ion-input label="Nombre de Usuario" labelPlacement="floating" placeholder="Ingrese su nombre de usuario" [(ngModel)]="usuario"></ion-input>
+  </ion-item>
+
+  <ion-button color="success" [routerLink]="['/home']">Ir al Home {{ usuario }}</ion-button>
+  <ion-button color="warning" (click)="irPagina()">Ir a Agregar</ion-button>-->
+</ion-content> 
