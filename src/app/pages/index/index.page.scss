@@ -1,13 +1,142 @@
 .image-container {
     display: flex;
-    justify-content: center; /* Centra la imagen horizontalmente */
-    align-items: center;     /* Centra la imagen verticalmente */
-    height: 100%;            /* Ocupa toda la altura del contenido */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
   
   .image-container img {
-    width: 50%; /* Ajusta el ancho de la imagen al 50% del contenedor */
-    max-width: 100%; /* Asegura que la imagen no se salga del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
+    width: 50%; /* Ajusta el ancho según tus necesidades */
+    max-width: 100%;
+    height: auto;
   }
+  .title-center {
+    text-align: center;
+    width: 100%;
+  }
+  ion-content {
+    --background: rgb(219, 161, 240); /* Cambia este color al que prefieras */
+  }
+  /* Estilo para el ion-toolbar */
+ion-toolbar {
+    --background: rgb(0, 0, 0); /* Fondo transparente o ajusta el color como prefieras */
+  }
+  
+  /* Estilo para el ion-title */
+  /* Estilo para el título en el ion-header */
+ion-title {
+    font-size: 2rem; /* Tamaño de la fuente */
+    font-weight: bold; /* Grosor de la fuente */
+    color: #ffffff; /* Color del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto para un efecto de profundidad */
+    text-transform: uppercase; /* Convertir el texto a mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+  }
+  
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  ///BOTONES
+  
+  /* Contenedor para centrar los botones */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Usa la altura completa de la ventana */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  /* Espaciado entre los botones */
+  .my-button {
+    font-size: 18px; /* Ajusta el tamaño de la fuente según tus necesidades */
+    padding: 12px 24px; /* Ajusta el relleno para hacer el botón más grande */
+    margin: 10px;
+  }
+  /* Estilo para hacer que los botones sean más largos */
+  .my-button {
+    height: 60px; /* Ajusta la altura del botón */
+    width: 80%; /* Ajusta el ancho del botón */
+    max-width: 400px; /* Establece un ancho máximo si es necesario */
+    font-size: 18px; /* Ajusta el tamaño de la fuente */
+    margin: 10px;
+  }
+  //DEFINIR COLORES
+
+  // Archivo: src/theme/variables.scss
+
+  section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+
+  ///BOTONES DE INICIO///
+  /// 
+  /// /* Estilo para centrar el contenedor de los botones */
+/* Estilo para centrar el contenedor de los botones */
+.button-container {
+    display: flex;
+    flex-direction: column; /* Alinea los botones verticalmente */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    height: calc(100vh - 56px); /* Ajusta la altura restante, considerando la altura del ion-header */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    position: relative; /* Asegura que el contenedor tenga un contexto de posicionamiento */
+    top: 25%; /* Baja el contenedor a la mitad de la altura del viewport */
+    transform: translateY(-50%); /* Ajusta la posición para centrar verticalmente */
+  }
+  
+  /* Estilo para hacer que los botones sean más grandes */
+  .button-container ion-button {
+    width: 80%; /* Ajusta el ancho del botón */
+    max-width: 300px; /* Establece un ancho máximo si es necesario */
+    height: 60px; /* Ajusta la altura del botón */
+    font-size: 18px; /* Ajusta el tamaño de la fuente */
+    margin: 10px; /* Espaciado entre los botones */
+    border-radius: 30px; /* Redondea los bordes del botón */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra sutil para un efecto de profundidad */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transiciones suaves para cambios en el color de fondo y la sombra */
+  }
+  
+  
+  
+
+
+
+ 
+  
+  
+  
+  
+  
   

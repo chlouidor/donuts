@@ -1,5 +1,5 @@
 ion-content {
-  --background: rgb(219, 161, 240); /* Cambia este color al que prefieras */
+  --background: rgb(219, 161, 240); 
 }
 #container {
     text-align: center;
@@ -33,10 +33,11 @@ ion-content {
     margin-left: auto;
     margin-right: auto;
     width: fit-content; 
+    background-color:rgb(167, 109, 255);
   }
 
 
-  #card button{
+  #button{
     color: #ffffff;
     background-color: #50376d;
     margin-left: auto;

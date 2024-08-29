@@ -19,12 +19,16 @@
             <ion-label>Página Agregar</ion-label>
           </ion-item>
         </ion-list>
+
+        <ion-item [routerDirection]="'root'" [routerLink]="'/index'">
+          <ion-icon name="alarm-outline"></ion-icon>
+          <ion-label>Página Home</ion-label>>
+        </ion-item>
   
       </ion-content>
   
     </ion-menu>
-  </ion-menu-toggle>
-  
+  </ion-menu-toggle>  
 
   <ion-router-outlet id="main-content"></ion-router-outlet>
 </ion-app>

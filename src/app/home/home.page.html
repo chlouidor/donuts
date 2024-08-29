@@ -1,18 +1,19 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      home
-    </ion-title>
+    <ion-buttons slot="start">
+    </ion-buttons>
+    <ion-title>Lista</ion-title>
   </ion-toolbar>
 </ion-header>
 
 
 <ion-content [fullscreen]="true">
 
-  <ion-breadcrumbs>
-    <ion-breadcrumb href="#index">donuts</ion-breadcrumb>
-    <ion-breadcrumb href="#inicio">Cambios</ion-breadcrumb>
-  </ion-breadcrumbs>
+  <ion-button color="dark" [routerLink]="['/index']" >Volver</ion-button> 
+
+  <!-- <ion-breadcrumbs>
+    <ion-breadcrumb href="#index">Inicio</ion-breadcrumb>
+  </ion-breadcrumbs> -->
 
 
 
@@ -30,7 +31,7 @@
     </mat-card-header>
     <img mat-card-image src="assets/icon/boston_manjar.png " alt="boston manjar">
     <mat-card-actions>
-      <button mat-button>Comprar</button>
+      <ion-button color="dark" [routerLink]="['/home']" id="button">Comprar</ion-button>
     </mat-card-actions>
   </mat-card>
 
@@ -41,7 +42,7 @@
     </mat-card-header>
     <img mat-card-image src="assets/icon/choco_arcoiris.png " alt="Chocolate Arcoiris">
     <mat-card-actions>
-      <button mat-button>comprar</button>
+      <ion-button color="dark" [routerLink]="['/home']" id="button">Comprar</ion-button>
     </mat-card-actions>
   </mat-card>
 
@@ -52,7 +53,7 @@
     </mat-card-header>
     <img mat-card-image src="assets/icon/clasica.png " alt="clasica">
     <mat-card-actions>
-      <button mat-button>comprar</button>
+      <ion-button color="dark" [routerLink]="['/home']" id="button">Comprar</ion-button>
     </mat-card-actions>
   </mat-card>
 
@@ -63,7 +64,7 @@
     </mat-card-header>
     <img mat-card-image src="assets/icon/glaseada.jpg " alt="glaseada">
     <mat-card-actions>
-      <button mat-button>comprar</button>
+      <ion-button color="dark" [routerLink]="['/home']" id="button">Comprar</ion-button>
     </mat-card-actions>
   </mat-card>
 
@@ -74,7 +75,7 @@
     </mat-card-header>
     <img mat-card-image src="assets/icon/boston_manjar.png " alt="boston manjar">
     <mat-card-actions>
-      <button mat-button>comprar</button>
+      <ion-button color="dark" [routerLink]="['/home']" id="button">Comprar</ion-button>
     </mat-card-actions>
   </mat-card>
 
@@ -85,7 +86,7 @@
     </mat-card-header>
     <img mat-card-image src="assets/icon/rollo_canela.png " alt="Rollo Canela">
     <mat-card-actions>
-      <button mat-button>comprar</button>
+      <ion-button color="dark" [routerLink]="['/home']" id="button">Comprar</ion-button>
     </mat-card-actions>
   </mat-card>
 
@@ -96,7 +97,7 @@
     </mat-card-header>
     <img mat-card-image src="assets/icon/super8.png " alt="super8">
     <mat-card-actions>
-      <button mat-button>comprar</button>
+      <ion-button color="dark" [routerLink]="['/home']" id="button">Comprar</ion-button>
     </mat-card-actions>
   </mat-card>
   <mat-card class="example-card" appearance="outlined" id="card">
@@ -106,7 +107,7 @@
     </mat-card-header>
     <img mat-card-image src="assets/icon/vainilla_acoiris.png " alt="Vainilla Arcoiris">
     <mat-card-actions>
-      <button mat-button>comprar</button>
+      <ion-button color="dark" [routerLink]="['/home']" id="button">Comprar</ion-button>
     </mat-card-actions>
   </mat-card>
 </div>
