@@ -10,114 +10,105 @@
     max-width: 100%;
     height: auto;
   }
+  
   .title-center {
     text-align: center;
     width: 100%;
   }
-  ion-content {
-    --background: rgb(219, 161, 240); /* Cambia este color al que prefieras */
-  }
-  /* Estilo para el ion-toolbar */
+  /* Estilo para ion-toolbar */
 ion-toolbar {
-    --background: rgb(0, 0, 0); /* Fondo transparente o ajusta el color como prefieras */
+    --background: rgba(0, 0, 0, 0.2); /* Cambia el color de fondo a blanco */
+    --color: black; /* Cambia el color del texto a negro para asegurar un buen contraste */
   }
-  
-  /* Estilo para el ion-title */
-  /* Estilo para el título en el ion-header */
+  /* Estilo para ion-title con efecto retro */
 ion-title {
-    font-size: 2rem; /* Tamaño de la fuente */
-    font-weight: bold; /* Grosor de la fuente */
-    color: #ffffff; /* Color del texto */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto para un efecto de profundidad */
-    text-transform: uppercase; /* Convertir el texto a mayúsculas */
-    letter-spacing: 1px; /* Espaciado entre letras */
+    font-size: 28px; /* Tamaño del texto */
+    color: rgb(167, 109, 255); /* Color claro del texto */
+    text-shadow: 2px 2px 0 #000000, /* Efecto de sombra para darle profundidad */
+                 -1px -1px 0 #000,
+                 1px -1px 0 #000,
+                 -1px 1px 0 #000,
+                 1px 1px 0 #000;
+    background: #ffffff; /* Fondo oscuro para el texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    border: 1px solid #f8f8f2; /* Borde claro alrededor del título */
+    font-weight: bold; /* Hacer el texto en negrita */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    text-transform: uppercase; /* Pone el texto en mayúsculas */
+  }
+  /* Estilo para el título retro */
+/* Estilo para el título con efecto neón */
+/* Estilo para el5título con efecto neón y resplandor */
+/* Estilo para el título con efecto neón y gradiente */
+/* Estilo para el título con biselado y neón */
+/* Estilo para el título con biselado y neón */
+.neon-title {
+    font-family: 'Arial', sans-serif; /* Fuente genérica */
+    font-size: 36px; /* Tamaño del texto */
+    color: #fff; /* Color del texto */
+    text-shadow: 
+      0 0 5px #ff00ff, /* Efecto de neón rosa */
+      0 0 5px #ff00ff,
+      0 0 5px #ff00ff,
+      0 0 5px #ff00ff,
+      0 0 5px #ff00ff,
+      0 0 5px #ff00ff,
+      0 0 5px #ff00ff;
+    background: linear-gradient(135deg, #ff00ff, #00ffff); /* Gradiente de colores neón */
+    color: transparent; /* Hace el texto transparente para mostrar el gradiente */
+    -webkit-background-clip: text; /* Recorta el fondo para ajustarse al texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    display: inline-block; /* Permite aplicar padding y border */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 5px; /* Espaciado entre letras */
+    font-weight: bold; /* Hacer el texto en negrita */
   }
   
+  /* Estilo general para ion-content */
+/* Estilo general para ion-content */
+/* Estilo general para ion-content */
+ion-content {
+    --background: rgb(0, 0, 0); /* Color de fondo del contenido */
+}
 
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  ///BOTONES
-  
-  /* Contenedor para centrar los botones */
+/* Contenedor para la imagen de fondo */
+.background-container {
+    position: relative; /* Hace que el contenedor tenga un contexto de posicionamiento */
+    height: 100%;
+    width: 100%;
+}
+
+/* Imagen de fondo */
+.background-image {
+    position: absolute; /* Posiciona la imagen de forma absoluta en relación con el contenedor */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    height: 100%; /* Ajusta la altura de la imagen al 100% del contenedor */
+    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor, manteniendo la relación de aspecto */
+    z-index: -1; /* Coloca la imagen detrás del contenido */
+}
+
+/* Contenedor para centrar los botones vertical y horizontalmente */
 .button-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Usa la altura completa de la ventana */
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-  
-  /* Espaciado entre los botones */
-  .my-button {
-    font-size: 18px; /* Ajusta el tamaño de la fuente según tus necesidades */
-    padding: 12px 24px; /* Ajusta el relleno para hacer el botón más grande */
-    margin: 10px;
-  }
-  /* Estilo para hacer que los botones sean más largos */
-  .my-button {
-    height: 60px; /* Ajusta la altura del botón */
-    width: 80%; /* Ajusta el ancho del botón */
-    max-width: 400px; /* Establece un ancho máximo si es necesario */
-    font-size: 18px; /* Ajusta el tamaño de la fuente */
-    margin: 10px;
-  }
-  //DEFINIR COLORES
-
-  // Archivo: src/theme/variables.scss
-
-  section {
-    display: table;
-  }
-  
-  .example-label {
-    display: table-cell;
-    font-size: 14px;
-    margin-left: 8px;
-    min-width: 120px;
-  }
-  
-  .example-button-row {
-    display: table-cell;
-    max-width: 600px;
-  }
-  
-  .example-button-row .mat-mdc-button-base {
-    margin: 8px 8px 8px 0;
-  }
-  
-  .example-flex-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  
-  .example-button-container {
-    display: flex;
-    justify-content: center;
-    width: 120px;
-  }
-
-  ///BOTONES DE INICIO///
-  /// 
-  /// /* Estilo para centrar el contenedor de los botones */
-/* Estilo para centrar el contenedor de los botones */
-.button-container {
-    display: flex;
-    flex-direction: column; /* Alinea los botones verticalmente */
-    justify-content: center; /* Centra verticalmente */
-    align-items: center; /* Centra horizontalmente */
-    height: calc(100vh - 56px); /* Ajusta la altura restante, considerando la altura del ion-header */
+    justify-content: center; /* Centra los botones verticalmente */
+    align-items: center; /* Centra los botones horizontalmente */
+    height: 80vh; /* Ocupa toda la altura visible de la pantalla */
     text-align: center; /* Centra el texto dentro del contenedor */
-    position: relative; /* Asegura que el contenedor tenga un contexto de posicionamiento */
-    top: 25%; /* Baja el contenedor a la mitad de la altura del viewport */
-    transform: translateY(-50%); /* Ajusta la posición para centrar verticalmente */
-  }
-  
-  /* Estilo para hacer que los botones sean más grandes */
-  .button-container ion-button {
+    position: absolute; /* Posiciona el contenedor en relación con el contenedor padre */
+    top: 0; /* Alinea la parte superior del contenedor con la parte superior del contenedor padre */
+    left: 0; /* Alinea la parte izquierda del contenedor con la parte izquierda del contenedor padre */
+    right: 0; /* Alinea la parte derecha del contenedor con la parte derecha del contenedor padre */
+    bottom: 0; /* Alinea la parte inferior del contenedor con la parte inferior del contenedor padre */
+    z-index: 1; /* Asegura que los botones estén por encima de la imagen */
+}
+
+/* Estilo para los botones */
+.button-container ion-button {
     width: 80%; /* Ajusta el ancho del botón */
     max-width: 300px; /* Establece un ancho máximo si es necesario */
     height: 60px; /* Ajusta la altura del botón */
@@ -126,17 +117,4 @@ ion-title {
     border-radius: 30px; /* Redondea los bordes del botón */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra sutil para un efecto de profundidad */
     transition: background-color 0.3s, box-shadow 0.3s; /* Transiciones suaves para cambios en el color de fondo y la sombra */
-  }
-  
-  
-  
-
-
-
- 
-  
-  
-  
-  
-  
-  
+}
