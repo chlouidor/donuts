@@ -8,12 +8,50 @@
 
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-    <img alt="Silhouette of mountains" src="assets/icon/donas.jpg" />
-    <ion-card-header>
-      <ion-card-title>DONAITIANO</ion-card-title>
-      <ion-card-subtitle></ion-card-subtitle>
-    </ion-card-header>
-  </ion-card>
-</ion-content>
 
+  <ion-breadcrumbs>
+    <ion-breadcrumb href="#index">donuts</ion-breadcrumb>
+    <ion-breadcrumb href="#inicio">Cambios</ion-breadcrumb>
+  </ion-breadcrumbs>
+
+
+
+  <ion-item *ngFor ="let dona of listaDona">
+    
+    <p>{{ dona.nombre }} $ {{ dona.precio }} pesos  </p>
+    <ion-button color="success" [routerLink]="['/home']">Comprar {{ dona.nombre }}</ion-button>
+
+  </ion-item>
+
+  <mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+
+
+  <!-- <p *ngIF="edad < 35">{{ Persona.nombre }}</p>
+ 
+  <ion-item>
+    <ion-input label="Nombre de Usuario" labelPlacement="floating" placeholder="Ingrese su nombre de usuario" [(ngModel)]="usuario"></ion-input>
+  </ion-item>
+
+  
+  <ion-button color="warning" (click)="irPagina()">Ir a Agregar</ion-button>-->
+
+
+</ion-content> 

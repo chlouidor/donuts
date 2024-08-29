@@ -1,18 +1,114 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>home</ion-title>
+    <ion-buttons slot="start">
+    </ion-buttons>
+    <ion-title>Lista</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">home</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+<ion-content [fullscreen]="true">
+
+  <ion-button color="dark" [routerLink]="['/index']" >Volver</ion-button> 
+
+  <!-- <ion-breadcrumbs>
+    <ion-breadcrumb href="#index">Inicio</ion-breadcrumb>
+  </ion-breadcrumbs> -->
+
+
+
+  <!-- <ion-item *ngFor ="let dona of listaDona">
+    
+    <p>{{ dona.nombre }} $ {{ dona.precio }} pesos  </p>
+    <ion-button color="success" [routerLink]="['/home']">Comprar {{ dona.nombre }}</ion-button> 
+
+  </ion-item> -->
+<div>
+  <mat-card class="example-card" appearance="outlined" id="card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title id="title">Boston Manjar</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/icon/boston_manjar.png " alt="boston manjar">
+    <mat-card-actions>
+      <ion-button color="dark" [routerLink]="['/home']" id="button">Comprar</ion-button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="example-card" appearance="outlined" id="card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title id="title">Chocolate Arcoiris</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/icon/choco_arcoiris.png " alt="Chocolate Arcoiris">
+    <mat-card-actions>
+      <ion-button color="dark" [routerLink]="['/home']" id="button">Comprar</ion-button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="example-card" appearance="outlined" id="card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title id="title">Clasica</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/icon/clasica.png " alt="clasica">
+    <mat-card-actions>
+      <ion-button color="dark" [routerLink]="['/home']" id="button">Comprar</ion-button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="example-card" appearance="outlined" id="card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title id="title">Glaseada</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/icon/glaseada.jpg " alt="glaseada">
+    <mat-card-actions>
+      <ion-button color="dark" [routerLink]="['/home']" id="button">Comprar</ion-button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="example-card" appearance="outlined" id="card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title id="title">Boston Manjar</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/icon/boston_manjar.png " alt="boston manjar">
+    <mat-card-actions>
+      <ion-button color="dark" [routerLink]="['/home']" id="button">Comprar</ion-button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="example-card" appearance="outlined" id="card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title id="title">Rollo Canela</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/icon/rollo_canela.png " alt="Rollo Canela">
+    <mat-card-actions>
+      <ion-button color="dark" [routerLink]="['/home']" id="button">Comprar</ion-button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="example-card" appearance="outlined" id="card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title id="title">Super8</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/icon/super8.png " alt="super8">
+    <mat-card-actions>
+      <ion-button color="dark" [routerLink]="['/home']" id="button">Comprar</ion-button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="example-card" appearance="outlined" id="card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title id="title">Vainilla Arcoiris</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/icon/vainilla_acoiris.png " alt="Vainilla Arcoiris">
+    <mat-card-actions>
+      <ion-button color="dark" [routerLink]="['/home']" id="button">Comprar</ion-button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+ 
