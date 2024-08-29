@@ -1,3 +1,6 @@
+ion-content {
+  --background: rgb(219, 161, 240); /* Cambia este color al que prefieras */
+}
 #container {
     text-align: center;
   
@@ -24,4 +27,23 @@
   
   #container a {
     text-decoration: none;
+  }
+  #card {
+    margin-top: 12%;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content; 
+  }
+
+
+  #card button{
+    color: #ffffff;
+    background-color: #50376d;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content; 
+  }
+
+  #title{
+    color: #ffffff;
   }
