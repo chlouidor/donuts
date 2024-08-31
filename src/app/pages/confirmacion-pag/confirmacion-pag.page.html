@@ -1,0 +1,26 @@
+
+
+
+
+<ion-content class="ion-padding">
+  <div class="confirmacion-container">
+    <h1>¡Pago Exitoso!</h1>
+    <p>Tu compra ha sido procesada exitosamente.</p>
+
+    <div class="detalles-pago">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Detalles del Pago</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p><strong>Producto:</strong> {{ Nombre }}</p>
+          <p><strong>Precio:</strong> ${{ Precio }}</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <ion-button color="dark" [routerLink]="['/index']" >Volver al Inicio</ion-button> 
+    <ion-button color="dark" [routerLink]="['/home']" >Volver a Comprar</ion-button> 
+  
+  </div>
+</ion-content>

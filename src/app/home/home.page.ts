@@ -8,61 +8,62 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class HomePage {
 
-  nombre: string = "";
-  precio: string = '';
-  dona: string = "";
-
   listaDona: any = [
-    { 
-      id: 1 ,
-      nombre: 'Clasica',
-      precio:'2.000'
+    {
+      id: 1,
+      imagen: 'assets/icon/clasica.png',
+      nombre: 'Clásica',
+      precio: '2.000'
     },
     {
       id: 2,
+      imagen: 'assets/icon/vainilla_acoiris.png',
       nombre: 'Vainilla Arcoiris',
-      precio:'5.000'
+      precio: '5.000'
     },
     {
       id: 3,
+      imagen: 'assets/icon/choco_arcoiris.png',
       nombre: 'Chocolate Arcoiris',
-      precio:'3.000'
+      precio: '3.000'
     },
     {
       id: 4,
+      imagen: 'assets/icon/glaseada.jpg',
       nombre: 'Glaseada',
-      precio:'2.000'
+      precio: '2.000'
     },
     {
       id: 5,
+      imagen: 'assets/icon/super8.png',
       nombre: 'Super8',
-      precio:'1.200'
+      precio: '1.200'
     },
     {
       id: 6,
+      imagen: 'assets/icon/boston_manjar.png',
       nombre: 'Boston Manjar',
-      precio:'1.000'
+      precio: '1.000'
     },
     {
       id: 7,
+      imagen: 'assets/icon/rollo_canela.png',
       nombre: 'Rollo de Canela',
-      precio:'2.200'
+      precio: '2.200'
     }
-  ]
+  ];
 
-  constructor( private router: Router) {}
-  irPagina(){
-    //creamos nuestra variable de contexto
-    // el nombre de nuestro contexto pude ser lo que deseamos en minuscula, aca le puse el nombe de navigacion
-    let navigationextras: NavigationExtras ={
-      //la variable state siempre se tiene que llamar asi
-      state:{
-        nom:this.listaDona.nombe,
-        pre: this.listaDona.precio,
-        dona:this.listaDona.dona
+  constructor(private router: Router) {}
+
+  irPagina(index: number) {
+    let donaSeleccionada = this.listaDona[index];
+    let navigationextras: NavigationExtras = {
+      state: {
+        nom: donaSeleccionada.nombre,
+        pre: donaSeleccionada.precio,
+        imag: donaSeleccionada.imagen
       }
-    }
-    //Puedo crear cualquier logica de programación
-    this.router.navigate(['/comprar']);
-}
+    };
+    this.router.navigate(['/compras'], navigationextras);
+  }
 }

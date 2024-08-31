@@ -19,7 +19,16 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'compras',
+    loadChildren: () => import('./pages/compras/compras.module').then( m => m.ComprasPageModule)
+  },
+  {
+    path: 'confirmacion-pag',
+    loadChildren: () => import('./pages/confirmacion-pag/confirmacion-pag.module').then( m => m.ConfirmacionPagPageModule)
   }
+
 
 ];
 @NgModule({

@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>compras</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">compras</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-button color="dark" [routerLink]="['/home']" >Volver</ion-button> 
+
+  <mat-card  class="example-card" appearance="outlined" id="card">
+    <img mat-card-image src="{{ Imagen }}" alt="{{ Nombre }}">
+    <mat-card-actions>
+    <mat-card-content>
+      <mat-card-title id="title">{{ Nombre }}</mat-card-title>
+      <mat-card-subtitle>${{ Precio }}</mat-card-subtitle>
+      <mat-select placeholder="cantidad"> 
+        <mat-option value="1">1</mat-option>
+        <mat-option value="2">2</mat-option>
+        <mat-option value="3">3</mat-option>
+        <mat-option value="4">4</mat-option>
+        <mat-option value="5">5</mat-option>
+        <mat-option value="6">6</mat-option>
+        <mat-option value="7">7</mat-option>
+        <mat-option value="8">8</mat-option>
+        <mat-option value="9">9</mat-option>
+        <mat-option value="10">10</mat-option>
+
+      </mat-select>
+    </mat-card-content>
+    <ion-button color="dark" id="button" (click)="confirmarPago()" >Confirmar Compra </ion-button> 
+    </mat-card-actions>
+  </mat-card>
+
+
+
+</ion-content>
+
+
