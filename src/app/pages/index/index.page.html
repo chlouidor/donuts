@@ -1,26 +1,21 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
     <ion-grid>
       <ion-row>
         <ion-col size="12" class="ion-text-center">
-          <ion-title>
-            DONAITIANO
-          </ion-title>
+          <h1 class="neon-title">DONAITIANO</h1>
         </ion-col>
       </ion-row>
     </ion-grid>
-  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-    <img alt="Silhouette of mountains" src="assets/icon/donas.jpg" />
-  </ion-card>
-  
-  <!-- Contenedor para centrar los botones -->
-  <div class="button-container">
-    <ion-button color="light" [routerLink]="['/home']" >Menu de Donas</ion-button> 
- 
-    <ion-button color="light">Perfil de Usuario</ion-button>
+  <div class="background-container">
+    <img class="background-image" src="assets/icon/donas.jpg" alt="Background Image">
+    <!-- Contenedor para centrar los botones -->
+    <div class="button-container">
+      
+      <ion-button color="light"  [routerLink]="['/home']" >Menu de Donas</ion-button>
+      <ion-button color="light">Perfil de Usuario</ion-button>
+    </div>
   </div>
 </ion-content>
