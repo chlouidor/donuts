@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'app-index',
   templateUrl: './index.page.html',
@@ -8,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexPage implements OnInit {
 
-  constructor( ) { }
+  constructor() { }
 
   ngOnInit() {
   }

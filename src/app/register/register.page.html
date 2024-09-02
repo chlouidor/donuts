@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToHome()">
+        <ion-icon name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Correo Electrónico</ion-label>
+            <ion-input type="email" [(ngModel)]="email" name="email" #emailCtrl="ngModel" required email></ion-input>
+          </ion-item>
+          <ion-note *ngIf="emailCtrl.invalid && emailCtrl.touched" color="danger">
+            Por favor ingresa un correo válido.
+          </ion-note>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="password" name="password" #passwordCtrl="ngModel" required minlength="6"></ion-input>
+          </ion-item>
+          <ion-note *ngIf="passwordCtrl.invalid && passwordCtrl.touched" color="danger">
+            La contraseña debe tener al menos 6 caracteres.
+          </ion-note>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-button expand="block" type="submit" [disabled]="registerForm.invalid">Registrar</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

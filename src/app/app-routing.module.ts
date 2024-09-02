@@ -27,14 +27,23 @@ const routes: Routes = [
   {
     path: 'confirmacion-pag',
     loadChildren: () => import('./pages/confirmacion-pag/confirmacion-pag.module').then( m => m.ConfirmacionPagPageModule)
-  },  {
+  },
+  {
     path: 'perfil',
     loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
   },
   {
     path: 'session',
     loadChildren: () => import('./pages/session/session.module').then( m => m.SessionPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   }
+
 
 
 
