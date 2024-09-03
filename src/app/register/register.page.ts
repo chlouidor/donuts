@@ -32,6 +32,9 @@ export class RegisterPage implements OnInit {
       });
       await toast.present();
 
+      // Guardar el email del usuario como el usuario autenticado actual
+      localStorage.setItem('currentUser', this.email);
+
       // Redirigir a la página de inicio de sesión
       this.navCtrl.navigateRoot('/login');
     } else {
@@ -41,6 +44,6 @@ export class RegisterPage implements OnInit {
 
   goToHome() {
     // Navegar a la página principal
-    this.navCtrl.navigateRoot('/home'); // Cambia '/home' por la ruta de tu menú principal
+    this.navCtrl.navigateRoot('/home');
   }
 }

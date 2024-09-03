@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-index',
@@ -6,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index.page.scss'],
 })
 export class IndexPage implements OnInit {
+  isAuthenticated: boolean = false;
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
+    // Verificar si el usuario está autenticado
+    this.isAuthenticated = !!localStorage.getItem('currentUser');
+  }
+
+  goToLoginOrProfile() {
+    if (this.isAuthenticated) {
+      this.navCtrl.navigateRoot('/perfil');
+    } else {
+      this.navCtrl.navigateRoot('/login');
+    }
   }
 }

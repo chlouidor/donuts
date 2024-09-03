@@ -20,11 +20,13 @@ export class LoginPage implements OnInit {
 
   async login(form: NgForm) {
     if (form.valid) {
-      // Recuperar los datos de Local Storage
       const storedEmail = localStorage.getItem('userEmail');
       const storedPassword = localStorage.getItem('userPassword');
 
       if (this.email === storedEmail && this.password === storedPassword) {
+        // Guardar el usuario autenticado en Local Storage
+        localStorage.setItem('currentUser', this.email);
+
         // Mostrar mensaje de sesión iniciada
         const toast = await this.toastController.create({
           message: 'Sesión iniciada correctamente',
@@ -33,13 +35,11 @@ export class LoginPage implements OnInit {
         });
         await toast.present();
 
-        // Navegar a la página principal después de que el toast desaparezca
+        // Redirigir al perfil después de que el toast desaparezca
         setTimeout(() => {
-          this.navCtrl.navigateRoot('/index'); // Asegúrate de que esta sea la ruta correcta
-        }, 2000); // Esperar 2 segundos para que el toast se muestre antes de redirigir
-
+          this.navCtrl.navigateRoot('/perfil'); // Cambia la ruta según sea necesario
+        }, 2000);
       } else {
-        // Mostrar un mensaje de error
         alert('Credenciales incorrectas');
       }
     } else {
@@ -48,12 +48,10 @@ export class LoginPage implements OnInit {
   }
 
   goToRegister() {
-    // Navegar a la página de registro
     this.navCtrl.navigateForward('/register');
   }
 
   goToHome() {
-    // Navegar a la página principal
-    this.navCtrl.navigateRoot('/index'); // Cambia '/home' por la ruta de tu menú principal
+    this.navCtrl.navigateRoot('/index');
   }
 }
