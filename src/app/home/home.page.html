@@ -10,6 +10,7 @@
       <mat-card-content>
         <mat-card-title id="title">{{ dona.nombre }}</mat-card-title>
         <mat-card-subtitle>${{ dona.precio }}</mat-card-subtitle>
+        <p>{{ dona.descripcion }}</p>
       </mat-card-content>
       <ion-button color="dark" (click)="irPagina(i)"  id="button" > Comprar </ion-button> 
       </mat-card-actions>

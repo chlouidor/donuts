@@ -39,18 +39,28 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },  {
+  },
+  {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
   {
-    path: 'not-found',
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
+  },
+  {
+    path: 'editar-dona',
+    loadChildren: () => import('./editar-dona/editar-dona.module').then( m => m.EditarDonaPageModule)
+  },
+
+  {
+    path: 'agregar-dona',
+    loadChildren: () => import('./agregar-dona/agregar-dona.module').then( m => m.AgregarDonaPageModule)
+  },
+  {
+    path: '**',
     loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
   }
-
-
-
-
 ];
 @NgModule({
   imports: [
