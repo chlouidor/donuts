@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { DonaService } from '../dona.service';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-agregar-dona',
@@ -15,10 +14,14 @@ export class AgregarDonaPage {
     descripcion: ''
   };
 
-  constructor(private router: Router, private donaService: DonaService) {}
+  constructor(private router: Router) {}
 
   agregarDona() {
-    this.donaService.addDona(this.nuevaDona);
-    this.router.navigate(['/admin']);
+    const navigationExtras: NavigationExtras = {
+      state: {
+        nuevaDona: this.nuevaDona
+      }
+    };
+    this.router.navigate(['/home'], navigationExtras);  // Redirige a la página principal (home)
   }
 }
