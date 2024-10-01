@@ -32,16 +32,12 @@ ion-toolbar {
   margin-right: 10px; /* Espacio entre el logo y el título */
 }
 
-/* Estilo del título */
-.neon-title {
-  font-size: 1.2rem; /* Tamaño del texto reducido para que el logo sea más grande */
-  font-weight: bold; /* Grosor del texto */
-  color: #ffffff; /* Color del texto */
-  text-shadow: 
-    0 0 5px rgba(255, 255, 255, 0.9), 
-    0 0 10px rgba(255, 255, 255, 0.8), 
-    0 0 15px rgba(255, 255, 255, 0.7); /* Efecto de neón sutil */
-  text-align: center; /* Asegura que el texto esté centrado */
+
+p {
+  font-size: 1.6rem; 
+  font-weight: bold; 
+  color: #ffffff; 
+  text-align: center;
 }
 
 /* Contenedor de la imagen de fondo */

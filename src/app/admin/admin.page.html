@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Administrar Donas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button  (click)="nuevaDona()">Agregar Nueva Dona</ion-button>
+  <ion-button  [routerLink]="['/home']">Home</ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let dona of listaDona; let i = index">
+      <ion-thumbnail slot="start">
+        <img [src]="dona.imagen">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ dona.nombre }}</h2>
+        <p>{{ dona.precio }}</p>
+        <p>{{ dona.descripcion }}</p>
+      </ion-label>
+      <ion-button (click)="eliminarDona(i)">Eliminar</ion-button>
+      <ion-button (click)="editarDona(i)">Editar</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
