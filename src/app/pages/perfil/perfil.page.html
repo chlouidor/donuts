@@ -1,7 +1,6 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Perfil de Usuario</ion-title>
-    <!-- Botón para ir al menú principal -->
     <ion-buttons slot="start">
       <ion-button (click)="goToMenu()">
         <ion-icon name="home"></ion-icon>
@@ -21,9 +20,21 @@
         <p>{{ userEmail }}</p>
         <p>+123 456 7890</p>
       </ion-label>
+      <ion-button fill="outline" slot="end" (click)="editProfile()">Modificar Perfil</ion-button>
     </ion-item>
   </ion-card>
-  
+
   <!-- Botón para cerrar sesión -->
   <ion-button expand="full" color="secondary" (click)="logout()">Cerrar Sesión</ion-button>
+
+  <!-- Botones para Cambiar y Recuperar Contraseña -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Opciones de Contraseña</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="full" color="primary" (click)="goToChangePassword()">Cambiar Contraseña</ion-button>
+      <ion-button expand="full" color="tertiary" (click)="goToRecoverPassword()">Recuperar Contraseña</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

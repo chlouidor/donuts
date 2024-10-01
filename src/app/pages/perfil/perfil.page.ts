@@ -14,12 +14,10 @@ export class PerfilPage implements OnInit {
   constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
-    // Verificar si el usuario está autenticado
     this.userEmail = localStorage.getItem('currentUser');
     this.isAuthenticated = !!this.userEmail;
 
     if (!this.isAuthenticated) {
-      // Redirigir al usuario a la página de inicio de sesión si no está autenticado
       this.navCtrl.navigateRoot('/login');
     } else {
       this.userName = this.userEmail ? this.userEmail.split('@')[0] : 'Nombre de Usuario';
@@ -27,14 +25,24 @@ export class PerfilPage implements OnInit {
   }
 
   logout() {
-    // Eliminar la información del usuario de Local Storage
     localStorage.removeItem('currentUser');
-    // Redirigir al usuario a la página de inicio de sesión después de cerrar sesión
     this.navCtrl.navigateRoot('/login');
   }
 
   goToMenu() {
-    // Redirigir al usuario al menú principal
     this.navCtrl.navigateRoot('/index');
+  }
+
+  goToChangePassword() {
+    this.navCtrl.navigateForward('/cambiar-clave'); // Reemplaza '/cambiar-clave' con la ruta de tu página de cambiar contraseña
+  }
+
+  goToRecoverPassword() {
+    this.navCtrl.navigateForward('/recuperar-clave'); // Reemplaza '/recuperar-clave' con la ruta de tu página de recuperar contraseña
+  }
+
+  editProfile() {
+    // Aquí puedes redirigir a la página de modificación del perfil
+    this.navCtrl.navigateForward('/modificar-perfil'); // Asegúrate de que esta ruta sea correcta
   }
 }

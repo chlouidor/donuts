@@ -10,48 +10,68 @@ import { NgForm } from '@angular/forms';
 export class LoginPage implements OnInit {
   email: string = '';
   password: string = '';
+  emailNotFound: boolean = false;
+  incorrectPassword: boolean = false;
 
   constructor(
     private navCtrl: NavController,
     private toastController: ToastController
-  ) { }
+  ) {}
 
   ngOnInit() {}
 
   async login(form: NgForm) {
+    // Comprobamos si el formulario es válido
     if (form.valid) {
+      // Obtener los valores guardados en el local storage
       const storedEmail = localStorage.getItem('userEmail');
       const storedPassword = localStorage.getItem('userPassword');
 
-      if (this.email === storedEmail && this.password === storedPassword) {
-        // Guardar el usuario autenticado en Local Storage
-        localStorage.setItem('currentUser', this.email);
-
-        // Mostrar mensaje de sesión iniciada
-        const toast = await this.toastController.create({
-          message: 'Sesión iniciada correctamente',
-          duration: 2000,
-          position: 'top'
-        });
-        await toast.present();
-
-        // Redirigir al perfil después de que el toast desaparezca
-        setTimeout(() => {
-          this.navCtrl.navigateRoot('/perfil'); // Cambia la ruta según sea necesario
-        }, 2000);
+      // Validación de si el correo está registrado
+      if (this.email !== storedEmail) {
+        this.emailNotFound = true; // Mostrar un mensaje si el correo no está registrado
+        return;
       } else {
-        alert('Credenciales incorrectas');
+        this.emailNotFound = false; // Resetear el estado del mensaje
       }
+
+      // Validación de la contraseña
+      if (this.password !== storedPassword) {
+        this.incorrectPassword = true; // Mostrar un mensaje si la contraseña es incorrecta
+        return;
+      } else {
+        this.incorrectPassword = false; // Resetear el estado del mensaje
+      }
+
+      // Si las credenciales son correctas, mostrar un mensaje de éxito
+      const toast = await this.toastController.create({
+        message: 'Inicio de sesión exitoso.',
+        duration: 2000,
+        position: 'top',
+      });
+      await toast.present();
+
+      // Redirigir a la página principal
+      this.navCtrl.navigateRoot('/home');
     } else {
-      alert('Por favor, completa los campos correctamente.');
+      // Si el formulario no es válido, mostrar un mensaje de error
+      const toast = await this.toastController.create({
+        message: 'Por favor completa todos los campos correctamente.',
+        duration: 2000,
+        position: 'top',
+        color: 'danger',
+      });
+      await toast.present();
     }
   }
 
   goToRegister() {
-    this.navCtrl.navigateForward('/register');
+    // Navegar a la página de registro
+    this.navCtrl.navigateRoot('/register');
   }
 
   goToHome() {
-    this.navCtrl.navigateRoot('/index');
+    // Navegar a la página principal
+    this.navCtrl.navigateRoot('/home');
   }
 }

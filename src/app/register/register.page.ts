@@ -8,19 +8,22 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
+  username: string = '';
   email: string = '';
   password: string = '';
+  confirmPassword: string = '';
 
   constructor(
     private navCtrl: NavController,
     private toastController: ToastController
-  ) { }
+  ) {}
 
   ngOnInit() {}
 
   async register(form: NgForm) {
-    if (form.valid) {
+    if (form.valid && this.password === this.confirmPassword) {
       // Guardar los datos de usuario en Local Storage
+      localStorage.setItem('username', this.username);
       localStorage.setItem('userEmail', this.email);
       localStorage.setItem('userPassword', this.password);
 
@@ -28,17 +31,24 @@ export class RegisterPage implements OnInit {
       const toast = await this.toastController.create({
         message: 'Registro exitoso. Ahora puedes iniciar sesión.',
         duration: 2000,
-        position: 'top'
+        position: 'top',
       });
       await toast.present();
-
-      // Guardar el email del usuario como el usuario autenticado actual
-      localStorage.setItem('currentUser', this.email);
 
       // Redirigir a la página de inicio de sesión
       this.navCtrl.navigateRoot('/login');
     } else {
-      alert('Por favor, completa los campos correctamente.');
+      // Mostrar error si las contraseñas no coinciden
+      if (this.password !== this.confirmPassword) {
+        const toast = await this.toastController.create({
+          message: 'Las contraseñas no coinciden.',
+          duration: 2000,
+          position: 'top',
+        });
+        await toast.present();
+      } else {
+        alert('Por favor, completa los campos correctamente.');
+      }
     }
   }
 

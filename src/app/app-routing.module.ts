@@ -42,6 +42,14 @@ const routes: Routes = [
   },  {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'cambiar-clave',
+    loadChildren: () => import('./cambiar-clave/cambiar-clave.module').then( m => m.CambiarClavePageModule)
+  },
+  {
+    path: 'recuperar-clave',
+    loadChildren: () => import('./recuperar-clave/recuperar-clave.module').then( m => m.RecuperarClavePageModule)
   }
 
 

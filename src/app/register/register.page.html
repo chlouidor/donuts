@@ -12,6 +12,21 @@
 <ion-content>
   <ion-grid>
     <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+      
+      <!-- Nombre de Usuario -->
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Nombre de Usuario</ion-label>
+            <ion-input type="text" [(ngModel)]="username" name="username" #usernameCtrl="ngModel" required></ion-input>
+          </ion-item>
+          <ion-note *ngIf="usernameCtrl.invalid && usernameCtrl.touched" color="danger">
+            El nombre de usuario es obligatorio.
+          </ion-note>
+        </ion-col>
+      </ion-row>
+
+      <!-- Correo Electrónico -->
       <ion-row>
         <ion-col size="12">
           <ion-item>
@@ -24,18 +39,36 @@
         </ion-col>
       </ion-row>
 
+      <!-- Contraseña -->
       <ion-row>
         <ion-col size="12">
           <ion-item>
             <ion-label position="floating">Contraseña</ion-label>
-            <ion-input type="password" [(ngModel)]="password" name="password" #passwordCtrl="ngModel" required minlength="6"></ion-input>
+            <ion-input type="password" [(ngModel)]="password" name="password" #passwordCtrl="ngModel" required minlength="6" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"></ion-input>
           </ion-item>
           <ion-note *ngIf="passwordCtrl.invalid && passwordCtrl.touched" color="danger">
-            La contraseña debe tener al menos 6 caracteres.
+            La contraseña debe tener al menos 6 caracteres, incluyendo letras y números.
           </ion-note>
         </ion-col>
       </ion-row>
 
+      <!-- Confirmar Contraseña -->
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Confirmar Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" #confirmPasswordCtrl="ngModel" required></ion-input>
+          </ion-item>
+          <ion-note *ngIf="confirmPasswordCtrl.invalid && confirmPasswordCtrl.touched" color="danger">
+            Confirma tu contraseña.
+          </ion-note>
+          <ion-note *ngIf="password !== confirmPassword && confirmPasswordCtrl.touched" color="danger">
+            Las contraseñas no coinciden.
+          </ion-note>
+        </ion-col>
+      </ion-row>
+
+      <!-- Botón de Registrar -->
       <ion-row>
         <ion-col size="12">
           <ion-button expand="block" type="submit" [disabled]="registerForm.invalid">Registrar</ion-button>
